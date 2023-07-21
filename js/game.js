@@ -3,7 +3,9 @@ class Game {
         this.startScreen = document.querySelector("#game-intro")
         this.gameScreen = document.querySelector("#game-screen")
         this.gameEndScreen = document.querySelector("#game-end")
-        this.player = null;
+        this.player = new Player (
+            this.gameScreen, 200, 500, 100, 150, "./images/car.png"
+        )
         this.width = "500px";
         this.height = "600px";
         this.obstacles = [];
@@ -26,7 +28,7 @@ class Game {
     };
 
     gameLoop(){
-        console.log("game loop started");
+        // console.log("game loop started");
         
         if (this.gameIsOver) {
             return
@@ -40,7 +42,7 @@ class Game {
     };
 
     update(){
-        console.log("update method");
+        this.player.move();
     };
 };
 
